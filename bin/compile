@@ -127,6 +127,7 @@ if [[ ${#SOLUTION_FILE} -eq 0 ]]; then
 	
 	# https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-publish?tabs=netcore21
 	# dotnet publish [<PROJECT>]
+	dotnet workload restore
 	dotnet publish $PROJECT_FILE --output $BUILD_DIR/Release --configuration Release --runtime linux-x64	
 else
 	# Get app assembly name from project file
@@ -145,6 +146,7 @@ else
 	# https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-publish?tabs=netcore21
 	# dotnet publish [<Solution>]
 	echo $SOLUTION_FILE
+	dotnet workload restore
 	dotnet publish $SOLUTION_FILE --output $BUILD_DIR/Release --configuration Release --runtime linux-x64
 fi
 
