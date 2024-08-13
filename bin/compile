@@ -147,9 +147,9 @@ else
 	# https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-publish?tabs=netcore21
 	# dotnet publish [<Solution>]
 	echo $SOLUTION_FILE
-	dotnet workload install wasm-tools
+	#dotnet workload install wasm-tools
 	dotnet publish $SOLUTION_FILE --output $BUILD_DIR/Release --configuration Release --runtime linux-x64
-	dotnet workload uninstall wasm-tools
+	#dotnet workload uninstall wasm-tools
 fi
 
 # Remove src files in production machine
